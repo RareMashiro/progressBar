@@ -11,7 +11,6 @@
 }
 
 .content {
-    border: 3px dotted blue;
     height: 35.5em;
     width: 20em;
     display: flex;
@@ -24,7 +23,7 @@
     width: 10em;
     height: 10em;
     border-radius: 50%;
-    background-image: conic-gradient(blue 0deg, #ededed 0deg 0deg);;
+    background-image: conic-gradient(blue 0deg, #ededed 0deg 0deg);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -80,6 +79,7 @@
     display: flex;
     align-items: center;
     transition: all 0.25s;
+    cursor: pointer;
 }
 
 .switch::before {
@@ -104,8 +104,10 @@
     display: none;
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (orientation: landscape) {
     .content {
+        width: 35.5em;
+        height: 20em;
         flex-direction: row;
     }
 }

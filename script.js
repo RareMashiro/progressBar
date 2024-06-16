@@ -14,7 +14,7 @@ let id = null;
 
 function animate() {
     if(flagOne) {
-        control.style.animation = 'rotation 2s linear infinite';
+        control.style.animation = 'rotation 1s linear infinite';
         flagOne = !flagOne;
     } else {
         control.style.animation = 'none';
@@ -38,6 +38,9 @@ function draw() {
     }
 
     let target = parseInt(range.value);
+    if(target > 100) target = 100;
+    if(target < 0) target = 0;
+
     id = setInterval(() => {
         if (start < target) {
             start++;
