@@ -103,3 +103,9 @@
 #checkboxOne, #checkboxTwo{
     display: none;
 }
+
+@media screen and (orientation: portrait) {
+    .content {
+        flex-direction: row;
+    }
+}
