@@ -1,28 +1,28 @@
-const circleComponent = (() => {
-    const control = document.querySelector('.circle');
-    const range = document.querySelector('.value');
+const circleComponent = ((name, val) => {
+    const control = document.querySelector(`.${name}`);
+    const range = document.querySelector(`.${val}`);
 
     let animationId = null;
-    let flagOne = true;
-    let flagTwo = true;
+    let isAnimate = true;
+    let isHide = true;
     let start = 0;
 
     function animate() {
-        if(flagOne) {
+        if(isAnimate) {
             control.style.animation = 'rotation 1s linear infinite';
         } else {
             control.style.animation = 'none';
         }
-        flagOne = !flagOne;
+        isAnimate = !isAnimate;
     }
 
     function hide() {
-        if(flagTwo) {
+        if(isHide) {
             control.style.display = 'none';
         } else {
             control.style.display = 'flex';
         }
-        flagTwo = !flagTwo;
+        isHide = !isHide;
     }
 
     function draw() {
@@ -48,14 +48,15 @@ const circleComponent = (() => {
         }, 10);
 
         function end() {
-            // rotatePosition = start * 3.6;
             control.style.background = `conic-gradient(blue ${start * 3.6}deg, #ededed ${start * 3.6}deg 0deg)`
         }
     }
 
     return { animate, draw, hide };
-})();
+});
 
-document.querySelector('#checkboxOne').addEventListener('click', () => circleComponent.animate());
-document.querySelector('#checkboxTwo').addEventListener('click', () => circleComponent.hide());
-document.querySelector('.value').addEventListener('input', circleComponent.draw);
+const run = circleComponent('circle', 'value');
+
+document.querySelector('#checkboxOne').addEventListener('click', () => run.animate());
+document.querySelector('#checkboxTwo').addEventListener('click', () => run.hide());
+document.querySelector('.value').addEventListener('input', () => run.draw());
