@@ -1,5 +1,3 @@
-// Начало проекта
-
 const control = document.querySelector('.circle')
 const btnOne = document.querySelector('#checkboxOne');
 const btnTwo = document.querySelector('#checkboxTwo');
