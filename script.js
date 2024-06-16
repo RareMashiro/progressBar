@@ -1,6 +1,6 @@
 const circleComponent = ((name, val) => {
-    const control = document.querySelector(`.${name}`);
-    const range = document.querySelector(`.${val}`);
+    const control = document.querySelector(name);
+    const range = document.querySelector(val);
 
     let animationId = null;
     let isAnimate = true;
@@ -55,7 +55,7 @@ const circleComponent = ((name, val) => {
     return { animate, draw, hide };
 });
 
-const run = circleComponent('circle', 'value');
+const run = circleComponent('.circle', '.value');
 
 document.querySelector('#checkboxOne').addEventListener('click', () => run.animate());
 document.querySelector('#checkboxTwo').addEventListener('click', () => run.hide());
