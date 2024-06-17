@@ -30,7 +30,7 @@ const circleComponent = ((name, val) => {
             clearInterval(animationId);
         }
 
-        let target = parseInt(range.value);
+        let target = parseInt(range.value) || 0;
         if(target > 100) target = 100;
         if(target < 0) target = 0;
 
@@ -41,11 +41,7 @@ const circleComponent = ((name, val) => {
             } else if (start > target) {
                 start--;
                 end();
-            } else {
-                if(!target) {
-                    start = 0;
-                    end();
-                }
+            }  else {
                 clearInterval(animationId);
                 animationId = null;
             }
