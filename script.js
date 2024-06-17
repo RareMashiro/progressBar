@@ -42,11 +42,11 @@ const circleComponent = ((name, val) => {
                 start--;
                 end();
             } else {
-                clearInterval(animationId);
                 if(!target) {
-                    control.style.background = 'conic-gradient(blue 0deg, #ededed 0deg 0deg)'
                     start = 0;
+                    end();
                 }
+                clearInterval(animationId);
                 animationId = null;
             }
         }, 10);
