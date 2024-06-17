@@ -43,6 +43,10 @@ const circleComponent = ((name, val) => {
                 end();
             } else {
                 clearInterval(animationId);
+                if(!target) {
+                    control.style.background = 'conic-gradient(blue 0deg, #ededed 0deg 0deg)'
+                    start = 0;
+                }
                 animationId = null;
             }
         }, 10);
